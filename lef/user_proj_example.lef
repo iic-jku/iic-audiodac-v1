@@ -4022,6 +4022,26 @@ MACRO user_proj_example
       LAYER met4 ;
         RECT 21.040 10.640 22.640 587.760 ;
     END
+    PORT
+      LAYER met4 ;
+        RECT 174.640 10.640 176.240 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 328.240 10.640 329.840 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 481.840 10.640 483.440 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 635.440 10.640 637.040 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 789.040 10.640 790.640 587.760 ;
+    END
   END vccd1
   PIN vssd1
     DIRECTION INPUT ;
@@ -4029,6 +4049,26 @@ MACRO user_proj_example
     PORT
       LAYER met4 ;
         RECT 97.840 10.640 99.440 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 251.440 10.640 253.040 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 405.040 10.640 406.640 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 558.640 10.640 560.240 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 712.240 10.640 713.840 587.760 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 865.840 10.640 867.440 587.760 ;
     END
   END vssd1
   PIN wb_clk_i
@@ -5496,7 +5536,11 @@ MACRO user_proj_example
       LAYER met3 ;
         RECT 8.345 9.015 867.440 587.685 ;
       LAYER met4 ;
-        RECT 174.640 9.015 867.440 587.760 ;
+        RECT 238.575 10.240 251.040 41.305 ;
+        RECT 253.440 10.240 327.840 41.305 ;
+        RECT 330.240 10.240 404.640 41.305 ;
+        RECT 407.040 10.240 421.985 41.305 ;
+        RECT 238.575 9.015 421.985 10.240 ;
   END
 END user_proj_example
 END LIBRARY

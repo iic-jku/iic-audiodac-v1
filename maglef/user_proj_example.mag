@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1631894554
+timestamp 1643266206
 << obsli1 >>
 rect 1104 1377 178848 117521
 << obsm1 >>
@@ -1228,8 +1228,22 @@ rect 1669 1803 173488 117537
 << metal4 >>
 rect 4208 2128 4528 117552
 rect 19568 2128 19888 117552
+rect 34928 2128 35248 117552
+rect 50288 2128 50608 117552
+rect 65648 2128 65968 117552
+rect 81008 2128 81328 117552
+rect 96368 2128 96688 117552
+rect 111728 2128 112048 117552
+rect 127088 2128 127408 117552
+rect 142448 2128 142768 117552
+rect 157808 2128 158128 117552
+rect 173168 2128 173488 117552
 << obsm4 >>
-rect 34928 1803 173488 117552
+rect 47715 2048 50208 8261
+rect 50688 2048 65568 8261
+rect 66048 2048 80928 8261
+rect 81408 2048 84397 8261
+rect 47715 1803 84397 2048
 << labels >>
 rlabel metal2 s 754 119200 810 120000 6 io_in[0]
 port 1 nsew signal input
@@ -2235,7 +2249,27 @@ rlabel metal2 s 49330 0 49386 800 6 la_oenb[9]
 port 501 nsew signal input
 rlabel metal4 s 4208 2128 4528 117552 6 vccd1
 port 502 nsew power input
+rlabel metal4 s 34928 2128 35248 117552 6 vccd1
+port 502 nsew power input
+rlabel metal4 s 65648 2128 65968 117552 6 vccd1
+port 502 nsew power input
+rlabel metal4 s 96368 2128 96688 117552 6 vccd1
+port 502 nsew power input
+rlabel metal4 s 127088 2128 127408 117552 6 vccd1
+port 502 nsew power input
+rlabel metal4 s 157808 2128 158128 117552 6 vccd1
+port 502 nsew power input
 rlabel metal4 s 19568 2128 19888 117552 6 vssd1
+port 503 nsew ground input
+rlabel metal4 s 50288 2128 50608 117552 6 vssd1
+port 503 nsew ground input
+rlabel metal4 s 81008 2128 81328 117552 6 vssd1
+port 503 nsew ground input
+rlabel metal4 s 111728 2128 112048 117552 6 vssd1
+port 503 nsew ground input
+rlabel metal4 s 142448 2128 142768 117552 6 vssd1
+port 503 nsew ground input
+rlabel metal4 s 173168 2128 173488 117552 6 vssd1
 port 503 nsew ground input
 rlabel metal2 s 110 0 166 800 6 wb_clk_i
 port 504 nsew signal input
@@ -2454,7 +2488,7 @@ string LEFclass BLOCK
 string FIXED_BBOX 0 0 180000 120000
 string LEFview TRUE
 string GDS_FILE /project/openlane/user_proj_example/runs/user_proj_example/results/magic/user_proj_example.gds
-string GDS_END 8095954
+string GDS_END 8097014
 string GDS_START 360410
 << end >>
 
