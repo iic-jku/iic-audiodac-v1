@@ -1,0 +1,19 @@
+---
+project:
+  description: "IIC-AUDIODAC project from Johannes Kepler University in SKY130."
+  foundry: "SkyWater"
+  git_url: "https://github.com/hpretl/iic-audiodac-v1"
+  organization: "Johannes Kepler University"
+  organization_url: "https://www.jku.at"
+  owner: "Harald Pretl"
+  process: "SKY130"
+  project_name: "iic-audiodac-v1"
+  project_id: "00000000"
+  tags:
+    - "Open MPW"
+    - "Test Harness"
+  category: "Test Harness"
+  top_level_netlist: "caravel/verilog/gl/caravel.v"
+  user_level_netlist: "verilog/gl/user_project_wrapper.v"
+  version: "1.00"
+  cover_image: "docs/source/_static/caravel_harness.png"

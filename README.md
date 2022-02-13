@@ -1,11 +1,10 @@
-# Caravel User Project
+[![CI](https://github.com/hpretl/iic-audiodac/actions/workflows/user_project_ci.yml/badge.svg)](https://github.com/hpretl/iic-audiodac/actions/workflows/user_project_ci.yml)[![Caravel Build](https://github.com/hpretl/iic-audiodac/actions/workflows/caravel_build.yml/badge.svg)](https://github.com/hpretl/iic-audiodac/actions/workflows/caravel_build.yml)
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![UPRJ_CI](https://github.com/efabless/caravel_project_example/actions/workflows/user_project_ci.yml/badge.svg)](https://github.com/efabless/caravel_project_example/actions/workflows/user_project_ci.yml) [![Caravel Build](https://github.com/efabless/caravel_project_example/actions/workflows/caravel_build.yml/badge.svg)](https://github.com/efabless/caravel_project_example/actions/workflows/caravel_build.yml)
+# IIC AudioDAC
 
-| :exclamation: Important Note            |
-|-----------------------------------------|
+(c) 2022 Harald Pretl and the class of 336.007 (WS21)
 
-## Please fill in your project documentation in this README.md file 
+Johannes Kepler University Linz, Institute for Integrated Circuits
 
+Delta-sigma audio DAC (16b, 48kHz), intended for tape-out on MPW-5, SKY130 technology.
 
-Refer to [README](docs/source/index.rst) for this sample project documentation. 

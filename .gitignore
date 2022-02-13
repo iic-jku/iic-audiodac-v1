@@ -1,1 +1,9 @@
 precheck_results
+drc*.tcl
+*.ext
+*.wav
+*.txt
+*.mat
+a.out
+*.vcd
+runs

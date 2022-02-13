@@ -1,0 +1,115 @@
+** sch_path: /home/harald/caravel_mpw5/iic-audiodac-v1/xschem/audiodac_drv.sch
+**.subckt audiodac_drv in_p in_n out_p out_n vdd in_hi vss
+*.ipin in_p
+*.ipin in_n
+*.opin out_p
+*.opin out_n
+*.ipin vdd
+*.ipin in_hi
+*.ipin vss
+x1 vdd drv_p drv_n in_hi in_p in_n vss audiodac_drv_ls
+x2 vdd net1 net2 vss audiodac_drv_latch
+x3 vdd drv_p out_p vss net1 audiodac_drv_half
+x4 vdd drv_n out_n vss net2 audiodac_drv_half
+XMdecouple vdd vss vdd vdd sky130_fd_pr__pfet_g5v0d10v5 L=10 W=55 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=2 m=2
+**.ends
+
+* expanding   symbol:  audiodac_drv_ls.sym # of pins=7
+** sym_path: /home/harald/caravel_mpw5/iic-audiodac-v1/xschem/audiodac_drv_ls.sym
+** sch_path: /home/harald/caravel_mpw5/iic-audiodac-v1/xschem/audiodac_drv_ls.sch
+.subckt audiodac_drv_ls  vdd_hi out_p out_n vdd_lo in_p in_n vss_lo
+*.ipin in_p
+*.ipin in_n
+*.opin out_p
+*.opin out_n
+*.ipin vdd_hi
+*.ipin vss_lo
+*.ipin vdd_lo
+XM6 out_p out_n vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM5 out_n out_p vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 casc1 in_p vss_lo vss_lo sky130_fd_pr__nfet_01v8 L=0.15 W=20 nf=10 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 casc2 in_n vss_lo vss_lo sky130_fd_pr__nfet_01v8 L=0.15 W=20 nf=10 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 out_n vdd_lo casc1 vss_lo sky130_fd_pr__nfet_05v0_nvt L=0.9 W=50 nf=5 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 out_p vdd_lo casc2 vss_lo sky130_fd_pr__nfet_05v0_nvt L=0.9 W=50 nf=5 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  audiodac_drv_latch.sym # of pins=4
+** sym_path: /home/harald/caravel_mpw5/iic-audiodac-v1/xschem/audiodac_drv_latch.sym
+** sch_path: /home/harald/caravel_mpw5/iic-audiodac-v1/xschem/audiodac_drv_latch.sch
+.subckt audiodac_drv_latch  vdd_hi in_p in_n vss
+*.ipin in_p
+*.ipin in_n
+*.ipin vdd_hi
+*.ipin vss
+XM19 in_n in_p vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM18 in_n in_p vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM20 in_p in_n vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=20 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM17 in_p in_n vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  audiodac_drv_half.sym # of pins=5
+** sym_path: /home/harald/caravel_mpw5/iic-audiodac-v1/xschem/audiodac_drv_half.sym
+** sch_path: /home/harald/caravel_mpw5/iic-audiodac-v1/xschem/audiodac_drv_half.sch
+.subckt audiodac_drv_half  vdd_hi in out vss crosscon
+*.ipin in
+*.opin out
+*.ipin vdd_hi
+*.ipin vss
+*.iopin crosscon
+XM10 out drv4 vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=100 nf=10 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=20 m=20
+XM9 out drv4 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=100 nf=10 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=10 m=10
+XM8 drv4 crosscon vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=100 nf=10 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=2 m=2
+XM7 drv4 crosscon vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=100 nf=10 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM6 crosscon drv2 vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=40 nf=4 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM5 crosscon drv2 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=20 nf=4 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 drv2 drv1 vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=8 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 drv2 drv1 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 drv1 in vdd_hi vdd_hi sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 drv1 in vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end
