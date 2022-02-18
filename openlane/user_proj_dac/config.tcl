@@ -23,6 +23,9 @@ set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/audiodac*.v \
 	$script_dir/../../verilog/rtl/stud*.v"
 
+# this takes long, only for final run
+set ::env(LEC_ENABLE) 1
+
 set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) {user_clock2}
