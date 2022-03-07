@@ -150,7 +150,6 @@ audiodac dac0 (
 	.tst_fifo_loop_i(tst_fifo_loop_i)
 );
 
-
 stud_dac_dsmod dac1 (
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),
@@ -172,7 +171,6 @@ stud_dac_dsmod dac1 (
     	.test_mode_i(tst_mode_i),
     	.test_sine_psc_i(tst_sine_psc_i)
 );
-
 
 endmodule // user_proj_dac
 

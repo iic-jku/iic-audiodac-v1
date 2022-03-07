@@ -1,12 +1,12 @@
 ---
 project:
-  description: "IIC-AUDIODAC project from Johannes Kepler University in SKY130."
-  foundry: "SkyWater"
+  description: "IIC-AUDIODAC project from Johannes Kepler University in SKY130A."
+  foundry: "SkyWater Technologies"
   git_url: "https://github.com/hpretl/iic-audiodac-v1"
   organization: "Johannes Kepler University"
   organization_url: "https://www.jku.at"
   owner: "Harald Pretl"
-  process: "SKY130"
+  process: "SKY130A"
   project_name: "iic-audiodac-v1"
   project_id: "00000000"
   tags:

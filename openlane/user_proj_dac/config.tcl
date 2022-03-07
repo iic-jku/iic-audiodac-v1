@@ -24,27 +24,27 @@ set ::env(VERILOG_FILES) "\
 	$script_dir/../../verilog/rtl/stud*.v"
 
 # this takes long, only for final run
-set ::env(LEC_ENABLE) 1
+#set ::env(LEC_ENABLE) 1
 
 set ::env(DESIGN_IS_CORE) 0
 
+# Set clock details
 set ::env(CLOCK_PORT) {user_clock2}
 set ::env(CLOCK_PERIOD) "50"
 
 # Design has hold violations, trying this to fix it
-set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) "0.5"
-set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) "0.5"
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) "0.7"
+set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) "0.7"
 
-
+# Setup placing and routing
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2000 2000"
-
-set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
-
-set ::env(FP_CORE_UTIL) 30
-set ::env(PL_TARGET_DENSITY) 0.30
-
+set ::env(FP_CORE_UTIL) 25
+set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
 set ::env(ROUTING_CORES) 4
+
+# Pin config
+set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
