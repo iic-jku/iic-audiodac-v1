@@ -57,17 +57,14 @@ set ::env(VERILOG_FILES_BLACKBOX) "\
 	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
 	$script_dir/../../verilog/rtl/user_proj_dac.v \
 	$script_dir/../../verilog/rtl/audiodac_drv.v"
-#	$script_dir/../../verilog/rtl/jku_logo.v"
 
 set ::env(EXTRA_LEFS) "\
 	$script_dir/../../lef/user_proj_dac.lef \
 	$script_dir/../../lef/audiodac_drv.lef"
-#	$script_dir/../../lef/jku_logo.lef"
 
 set ::env(EXTRA_GDS_FILES) "\
-	$script_dir/../../gds/uder_proj_dac.gds \
+	$script_dir/../../gds/user_proj_dac.gds \
 	$script_dir/../../gds/audiodac_drv.gds"
-#	$script_dir/../../gds/jku_logo.gds"
 
 set ::env(GLB_RT_MAXLAYER) 5
 
