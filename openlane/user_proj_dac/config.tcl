@@ -43,6 +43,13 @@ set ::env(FP_CORE_UTIL) 25
 set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
 set ::env(ROUTING_CORES) 4
 
+# Need to blacklist decap_12, otherwise LI1 density too high in Caravel
+set ::env(DECAP_CELL) "\
+	sky130_fd_sc_hd__decap_3 \
+	sky130_fd_sc_hd__decap_4 \
+	sky130_fd_sc_hd__decap_6 \
+	sky130_fd_sc_hd__decap_8"
+
 # Pin config
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
