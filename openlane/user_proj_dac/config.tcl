@@ -38,17 +38,18 @@ set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) "0.7"
 
 # Setup placing and routing
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2000 2000"
+set ::env(DIE_AREA) "0 0 1500 2000"
 set ::env(FP_CORE_UTIL) 25
 set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
 set ::env(ROUTING_CORES) 4
 
 # Need to blacklist decap_12, otherwise LI1 density too high in Caravel
-set ::env(DECAP_CELL) "\
-	sky130_fd_sc_hd__decap_3 \
-	sky130_fd_sc_hd__decap_4 \
-	sky130_fd_sc_hd__decap_6 \
-	sky130_fd_sc_hd__decap_8"
+#set ::env(DECAP_CELL) "\
+#	sky130_fd_sc_hd__decap_3 \
+#	sky130_fd_sc_hd__decap_4 \
+#	sky130_fd_sc_hd__decap_6 \
+#	sky130_fd_sc_hd__decap_8 \
+#	sky130_ef_sc_hd__decap_12"
 
 # Pin config
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
