@@ -38,7 +38,7 @@ set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) "0.7"
 
 # Setup placing and routing
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 1500 2000"
+set ::env(DIE_AREA) "0 0 1200 2000"
 set ::env(FP_CORE_UTIL) 25
 set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
 set ::env(ROUTING_CORES) 4
